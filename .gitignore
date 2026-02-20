@@ -1,3 +1,37 @@
-*_Implmnt/*
+# --- iCEcube2 Output Directories ---
+# This matches your specific naming convention and the default iCEcube2 output
+*_Implmnt/
+sbt/
+stdout.log
+stdout.log.bak
+
+# --- Lattice Diamond / Programmer ---
+# Diamond Programmer creates logs and temporary project files
+*.xcf
+*.bak
 *.log
-*.tcl
+# Diamond project specific artifacts
+.recovery/
+*/.p_t/
+
+# --- Synthesis & Tool Artifacts ---
+# Synplify Pro (often used by iCEcube2) creates these
+synlog.tcl
+*.srr
+*.srs
+*.srm
+*.sdc.bak
+*.synprg
+*.fse
+
+# --- Bitstream & Binary Outputs ---
+# Only exclude these if you prefer to build them fresh every time. 
+# Usually, you don't want binaries in Git.
+*.bin
+*.hex
+*.bit
+
+# --- OS/Editor Trash ---
+.DS_Store
+Thumbs.db
+.vscode/

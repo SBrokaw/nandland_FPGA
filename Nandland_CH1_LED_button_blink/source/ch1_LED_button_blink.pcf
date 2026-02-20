@@ -1,0 +1,14 @@
+# Merrick, Russel. Nandland.
+# Getting Started with FPGAs, 2024
+
+# Inputs
+set_io btn0 51
+set_io btn1 52
+set_io btn2 53
+set_io btn3 54
+
+# LEDs
+set_io LED0 56
+set_io LED1 57
+set_io LED2 59
+set_io LED3 60
