@@ -1,0 +1,10 @@
+# Merrick, R. (2024). The Flip-Flop (aka Register).
+# Getting Started with FPGAs.
+# https://nandland.com/project-3-the-flip-flop-aka-register/
+
+# Inputs
+set_io btn0 51
+set_io btn1 52
+
+# Outputs
+set_io LED0 56
