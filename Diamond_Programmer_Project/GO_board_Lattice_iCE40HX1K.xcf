@@ -17,12 +17,13 @@
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>C:/fpga_projects/Nandland_FPGAs/Nandland_CH1_LED_button_blink/Nandland_CH1_LED_button_blink_Implmnt/sbt/outputs/bitmap/ch1_LED_button_blink_bitmap.bin</File>
-			<FileTime>02/17/26 20:32:38</FileTime>
-			<JedecChecksum>0xAECC</JedecChecksum>
+			<File>C:/fpga_projects/Nandland_FPGAs/proj2_LUT/proj2_LUT_Implmnt/sbt/outputs/bitmap/proj2_LUT_bitmap.bin</File>
+			<FileTime>02/21/26 11:49:28</FileTime>
+			<JedecChecksum>0xAF9F</JedecChecksum>
 			<Operation>SPI Flash Erase,Program,Verify</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
+				<SVFProcessor>SVF Processor</SVFProcessor>
 				<AccessMode>SPI Flash Programming</AccessMode>
 			</Option>
 			<FPGALoader>
@@ -45,6 +46,7 @@
 					<Option>
 						<SVFVendor>JTAG STANDARD</SVFVendor>
 						<IOState>HighZ</IOState>
+						<SVFProcessor>SVF Processor</SVFProcessor>
 						<AccessMode>JTAG</AccessMode>
 					</Option>
 				</Device>
@@ -58,7 +60,7 @@
 					<IDCode>0x10</IDCode>
 					<Package>8-pin SOIC</Package>
 					<Operation>SPI Flash Erase,Program,Verify</Operation>
-					<File>C:/fpga_projects/Nandland_FPGAs/Nandland_CH1_LED_button_blink/Nandland_CH1_LED_button_blink_Implmnt/sbt/outputs/bitmap/ch1_LED_button_blink_bitmap.bin</File>
+					<File>C:/fpga_projects/Nandland_FPGAs/proj2_LUT/proj2_LUT_Implmnt/sbt/outputs/bitmap/proj2_LUT_bitmap.bin</File>
 					<AddressBase>0x00000000</AddressBase>
 					<EndAddress>0x00018000</EndAddress>
 					<DeviceSize>1</DeviceSize>
@@ -79,6 +81,7 @@
 					</LocalChainList>
 					<Option>
 						<SVFVendor>JTAG STANDARD</SVFVendor>
+						<SVFProcessor>SVF Processor</SVFProcessor>
 					</Option>
 				</Device>
 			</FPGADevice>
@@ -97,7 +100,7 @@
 	</ProjectOptions>
 	<CableOptions>
 		<CableName>USB2</CableName>
-		<PortAdd>FTUSB-1</PortAdd>
-		<USBID>Dual RS232-HS A Location 0001 Serial A</USBID>
+		<PortAdd>FTUSB-0</PortAdd>
+		<USBID>Dual RS232-HS A Location 0000 Serial A</USBID>
 	</CableOptions>
 </ispXCF>

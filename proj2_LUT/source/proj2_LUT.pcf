@@ -1,0 +1,10 @@
+# Merrick, R. (2024). The Look-Up Table.
+# Getting Started with FPGAs.
+# https://nandland.com/project-2-the-look-up-table-lut/
+
+# Inputs
+set_io btn0 51
+set_io btn1 52
+
+# Outputs
+set_io LED0 56

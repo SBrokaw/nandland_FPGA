@@ -1,5 +1,6 @@
-// Merrick, Russel. Nandland.
-// Getting Started with FPGAs, 2024
+// Merrick, Russel (2024). Button Blink LEDs.
+// Getting Started with FPGAs.
+// https://nandland.com/project-1-your-first-go-board-project/
 
 module ch1_LED_button_blink
     (input btn0,
