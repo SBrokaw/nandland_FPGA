@@ -18,7 +18,7 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>C:/fpga_projects/Nandland_FPGAs/proj2_LUT/proj2_LUT_Implmnt/sbt/outputs/bitmap/proj2_LUT_bitmap.bin</File>
-			<FileTime>02/21/26 11:49:28</FileTime>
+			<FileTime>02/21/26 12:07:21</FileTime>
 			<JedecChecksum>0xAF9F</JedecChecksum>
 			<Operation>SPI Flash Erase,Program,Verify</Operation>
 			<Option>
