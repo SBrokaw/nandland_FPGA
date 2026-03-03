@@ -17,9 +17,9 @@
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>C:/fpga_projects/Nandland_FPGAs/proj2_LUT/proj2_LUT_Implmnt/sbt/outputs/bitmap/proj2_LUT_bitmap.bin</File>
-			<FileTime>02/21/26 12:07:21</FileTime>
-			<JedecChecksum>0xAF9F</JedecChecksum>
+			<File>C:/fpga_projects/Nandland_FPGAs/proj3_first_register/proj3_first_register_Implmnt/sbt/outputs/bitmap/proj3_first_register_bitmap.bin</File>
+			<FileTime>03/01/26 22:07:46</FileTime>
+			<JedecChecksum>0x51A3</JedecChecksum>
 			<Operation>SPI Flash Erase,Program,Verify</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
@@ -60,11 +60,11 @@
 					<IDCode>0x10</IDCode>
 					<Package>8-pin SOIC</Package>
 					<Operation>SPI Flash Erase,Program,Verify</Operation>
-					<File>C:/fpga_projects/Nandland_FPGAs/proj2_LUT/proj2_LUT_Implmnt/sbt/outputs/bitmap/proj2_LUT_bitmap.bin</File>
+					<File>C:/fpga_projects/Nandland_FPGAs/proj3_first_register/proj3_first_register_Implmnt/sbt/outputs/bitmap/proj3_first_register_bitmap.bin</File>
 					<AddressBase>0x00000000</AddressBase>
 					<EndAddress>0x00018000</EndAddress>
 					<DeviceSize>1</DeviceSize>
-					<DataSize>32300</DataSize>
+					<DataSize>32299</DataSize>
 					<NumberOfDevices>1</NumberOfDevices>
 					<ReInitialize value="FALSE"/>
 				</Device>

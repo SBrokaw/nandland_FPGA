@@ -4,7 +4,10 @@
 
 # Inputs
 set_io btn0 51
+set_io clk 15
 
 # Outputs
 set_io LED0 56
 set_io LED1 57
+set_io LED2 59
+set_io LED3 60
