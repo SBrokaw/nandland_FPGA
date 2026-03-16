@@ -79,4 +79,8 @@ module proj4_debounce(
         r_LED3 <= db_btn0;
     end
 
+    assign LED0 = r_LED0;
+    assign LED1 = r_LED1;
+    assign LED3 = r_LED3;
+
 endmodule
