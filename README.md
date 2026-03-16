@@ -9,3 +9,8 @@ https://nandland.com/project-1-your-first-go-board-project/
 ## Project 2: The Lookup Table
 https://nandland.com/project-2-the-look-up-table-lut/
 
+## Project 3: The Flip-Flop
+https://nandland.com/project-3-the-flip-flop-aka-register/
+
+## Project 4: Debounce
+https://nandland.com/project-4-debounce-a-switch/

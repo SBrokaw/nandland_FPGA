@@ -1,7 +1,12 @@
 # --- iCEcube2 Output Directories ---
-# This matches your specific naming convention and the default iCEcube2 output
-*_Implmnt/
-sbt/
+# 1. Ignore the implementation directory contents
+**/*_Implmnt/*
+# 2. Allow Git to look into the subdirectories leading to the bin
+!**/*_Implmnt/**/
+# 4. Finally, explicitly allow the bin files
+!**/*_Implmnt/**/*_bitmap.bin
+
+# standard log files
 stdout.log
 stdout.log.bak
 
@@ -27,7 +32,6 @@ synlog.tcl
 # --- Bitstream & Binary Outputs ---
 # Only exclude these if you prefer to build them fresh every time. 
 # Usually, you don't want binaries in Git.
-*.bin
 *.hex
 *.bit
 

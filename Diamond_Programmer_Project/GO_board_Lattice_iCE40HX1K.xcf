@@ -17,9 +17,9 @@
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>C:/fpga_projects/Nandland_FPGAs/proj3_first_register/proj3_first_register_Implmnt/sbt/outputs/bitmap/proj3_first_register_bitmap.bin</File>
-			<FileTime>03/01/26 22:07:46</FileTime>
-			<JedecChecksum>0x51A3</JedecChecksum>
+			<File>C:/fpga_projects/Nandland_FPGAs/proj4_debounce/proj4_debounce_Implmnt/sbt/outputs/bitmap/proj4_debounce_bitmap.bin</File>
+			<FileTime>03/16/26 14:57:03</FileTime>
+			<JedecChecksum>0x4C36</JedecChecksum>
 			<Operation>SPI Flash Erase,Program,Verify</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
@@ -60,7 +60,7 @@
 					<IDCode>0x10</IDCode>
 					<Package>8-pin SOIC</Package>
 					<Operation>SPI Flash Erase,Program,Verify</Operation>
-					<File>C:/fpga_projects/Nandland_FPGAs/proj3_first_register/proj3_first_register_Implmnt/sbt/outputs/bitmap/proj3_first_register_bitmap.bin</File>
+					<File>C:/fpga_projects/Nandland_FPGAs/proj4_debounce/proj4_debounce_Implmnt/sbt/outputs/bitmap/proj4_debounce_bitmap.bin</File>
 					<AddressBase>0x00000000</AddressBase>
 					<EndAddress>0x00018000</EndAddress>
 					<DeviceSize>1</DeviceSize>
