@@ -17,21 +17,31 @@
     // debounce buttons
     wire btn0;
     wire btn1;
+    reg prev_btn0;
+    reg prev_btn1;
     debounce_btn db0( .clk(clk), .btn(raw_btn0), .db_btn(btn0));
     debounce_btn db1( .clk(clk), .btn(raw_btn1), .db_btn(btn1));
 
     // form seven segment input
-    reg [3:0] num;
+    reg r_LED0;
+    reg [3:0] num = 4'h0;
     always @(posedge clk) begin
-        case( btn0 )
-            0: num = 4'hf;
-            1: num = 4'h0;
-            default: num = 4'h1;
-        endcase
+        // rising edge detection
+        if( !prev_btn0 & btn0 ) begin
+            num <= num + 1;
+            if( num > 4'hf ) num <= 4'h0;
+        end
+
+        // falling edge detection
+        if( prev_btn0 & !btn0 ) begin
+            r_LED0 <= ~r_LED0;
+        end
+
+        prev_btn0 <= btn0;
     end
 
     // seven segment output
     seven_seg ss0( .num(num), .segments(segments));
-    assign LED0 = btn0;
+    assign LED0 = r_LED0;
 
  endmodule

@@ -14,3 +14,6 @@ https://nandland.com/project-3-the-flip-flop-aka-register/
 
 ## Project 4: Debounce
 https://nandland.com/project-4-debounce-a-switch/
+
+## Project 5: Seven Segment Display
+https://nandland.com/project-5-seven-segment-display/
