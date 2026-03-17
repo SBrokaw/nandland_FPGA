@@ -1,0 +1,18 @@
+# Merrick, R. (2024). Seven Segment Display.
+# Getting Started with FPGAs.
+# https://nandland.com/project-6-seven-segment-display/
+
+# Inputs
+set_io clk 15
+set_io raw_btn0 51
+set_io raw_btn1 52
+
+# Outputs
+set_io segments[6] 3
+set_io segments[5] 4
+set_io segments[4] 93
+set_io segments[3] 91
+set_io segments[2] 90
+set_io segments[1] 1
+set_io segments[0] 2
+set_io LED0 56
