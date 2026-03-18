@@ -1,0 +1,30 @@
+# Merrick, R. (2024). LED Timers.
+# Getting Started with FPGAs.
+# https://nandland.com/project-6-how-to-simulate-your-fpga-designs/
+
+# Inputs
+set_io clk 15
+set_io raw_btn0 51
+set_io raw_btn1 52
+
+# Outputs
+set_io segments0[6] 100
+set_io segments0[5] 99
+set_io segments0[4] 97
+set_io segments0[3] 95
+set_io segments0[2] 94
+set_io segments0[1] 8
+set_io segments0[0] 96
+
+set_io segments1[6] 3
+set_io segments1[5] 4
+set_io segments1[4] 93
+set_io segments1[3] 91
+set_io segments1[2] 90
+set_io segments1[1] 1
+set_io segments1[0] 2
+
+set_io LED0 56
+set_io LED1 57
+set_io LED2 59
+set_io LED3 60
