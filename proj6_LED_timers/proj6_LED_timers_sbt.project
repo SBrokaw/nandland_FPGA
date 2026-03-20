@@ -4,7 +4,7 @@ Version=Lattice Semiconductor Corporation iCEcube - Release: 2020.12.27943 - Bui
 ProjectName=proj6_LED_timers
 Vendor=SiliconBlue
 Synthesis=synplify
-ProjectVFiles=source/debounce_btn.v,source/proj6_LED_timers.v,source/seven_seg.v,source/timer.v
+ProjectVFiles=source/debounce_btn.v=work,source/proj6_LED_timers.v=work,source/seven_seg.v=work,source/timer.v=work
 ProjectCFiles=
 CurImplementation=proj6_LED_timers_Implmnt
 Implementations=proj6_LED_timers_Implmnt
