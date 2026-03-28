@@ -1,0 +1,28 @@
+# Merrick, R. (2024). UART Receiver.
+# Getting Started with FPGAs.
+# https://nandland.com/project-7-uart-part-1-receive-data-from-computer/ 
+
+# Inputs
+set_io clk 15;
+set_io raw_data 73;
+set_io raw_reset_btn 54;
+
+# Outputs
+set_io seven_seg0[6] 100
+set_io seven_seg0[5] 99
+set_io seven_seg0[4] 97
+set_io seven_seg0[3] 95
+set_io seven_seg0[2] 94
+set_io seven_seg0[1] 8
+set_io seven_seg0[0] 96
+
+set_io seven_seg1[6] 3
+set_io seven_seg1[5] 4
+set_io seven_seg1[4] 93
+set_io seven_seg1[3] 91
+set_io seven_seg1[2] 90
+set_io seven_seg1[1] 1
+set_io seven_seg1[0] 2
+
+set_io activity_LED 56
+set_io breathing_LED 60

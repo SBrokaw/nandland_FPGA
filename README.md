@@ -22,3 +22,8 @@ https://nandland.com/project-5-seven-segment-display/
 https://nandland.com/project-6-how-to-simulate-your-fpga-designs/
 
 http://www.edaplayground.com/x/ATH
+
+## Project 7: UART Rx
+https://nandland.com/project-7-uart-part-1-receive-data-from-computer/
+
+http://www.edaplayground.com/x/ATH
