@@ -2,12 +2,9 @@
 #-- Project file C:\fpga_projects\Nandland_FPGAs\proj7_UART_Rx\proj7_UART_Rx_syn.prj
 #project files
 
-add_file -verilog -lib work "source/clk_counter.v" 
-add_file -verilog -lib work "source/debounce_btn.v" 
 add_file -verilog -lib work "source/proj7_UART_Rx.v" 
-add_file -verilog -lib work "source/seven_seg.v" 
 add_file -verilog -lib work "source/timer_ms.v" 
-add_file -verilog -lib work "source/UART_Rx.v" 
+add_file -verilog -lib work "source/breathing_LED.v" 
 #implementation: "proj7_UART_Rx_Implmnt"
 impl -add proj7_UART_Rx_Implmnt -type fpga
 

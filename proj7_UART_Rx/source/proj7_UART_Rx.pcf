@@ -3,9 +3,9 @@
 # https://nandland.com/project-7-uart-part-1-receive-data-from-computer/ 
 
 # Inputs
-set_io clk 15;
-set_io raw_data 73;
-set_io raw_reset_btn 54;
+set_io clk 15
+set_io raw_data 73
+set_io raw_reset_btn 54
 
 # Outputs
 set_io seven_seg0[6] 100

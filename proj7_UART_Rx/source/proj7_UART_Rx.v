@@ -16,18 +16,19 @@ module proj7_UART_Rx
     output breathing_LED,
     output activity_LED);
 
-    // breathing LED indicator
-    reg r_breathing_LED;
-    wire breathe;
-    timer_ms #(.time_ms(5000)) breath_timer(.clk(clk), .timer_full(breathe));
-    always @( posedge clk ) begin
-        if( breathe ) r_breathing_LED <= ~r_breathing_LED;
+    /* breathing LED indicator */
+    wire ding_activity;
+    wire w_breathing_LED;
+    breathing_LED #(.time_ms(5000), .pwm(20)) breathe0(.clk(clk), .breathing_LED(w_breathing_LED));
+    timer_ms #(.time_ms(200)) activity_timer(.clk(clk), .timer_full(ding_activity));
+    reg r_activity_LED;
+
+    always @(posedge clk) begin
+        if(ding_activity) r_activity_LED <= ~r_activity_LED;
     end
 
-    // UART
-    reg [7:0] packet = 0;
-    UART_Rx #(.clkrate(CLKRATE), .baudrate(115200), .data_bits(8), 
-              .parity_bit(True), .stop_bits(1))
-        UART_Rx0(.clk(clk), .data(data), .rx_pkt(packet));
+    /* outputs */
+    assign breathing_LED = w_breathing_LED;
+    assign activity_LED = r_activity_LED;
 
 endmodule

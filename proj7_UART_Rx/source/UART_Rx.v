@@ -7,9 +7,9 @@ module UART_Rx
     #(parameter clkrate = 25_000_000,
     parameter baudrate = 115200,
     parameter data_bits = 8,
-    parameter parity_bit = True,
+    parameter parity_bit = 1,
     parameter stop_bits = 1,
-    parameter flow_ctrl = None)
+    parameter flow_ctrl = 0)
     (input clk,
     input data,
     output rx_pkt);
