@@ -4,7 +4,7 @@ Version=Lattice Semiconductor Corporation iCEcube - Release: 2020.12.27943 - Bui
 ProjectName=proj7_UART_Rx
 Vendor=SiliconBlue
 Synthesis=synplify
-ProjectVFiles=source/proj7_UART_Rx.v=work,source/timer_ms.v=work,source/breathing_LED.v
+ProjectVFiles=source/proj7_UART_Rx.v=work,source/timer_ms.v=work,source/breathing_LED.v=work
 ProjectCFiles=
 CurImplementation=proj7_UART_Rx_Implmnt
 Implementations=proj7_UART_Rx_Implmnt

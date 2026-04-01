@@ -19,7 +19,7 @@ module proj7_UART_Rx
     /* breathing LED indicator */
     wire ding_activity;
     wire w_breathing_LED;
-    breathing_LED #(.time_ms(5000), .pwm(20)) breathe0(.clk(clk), .breathing_LED(w_breathing_LED));
+    breathing_LED #(.time_ms(5000), .max_duty(20)) breathe0(.clk(clk), .breathing_LED(w_breathing_LED));
     timer_ms #(.time_ms(200)) activity_timer(.clk(clk), .timer_full(ding_activity));
     reg r_activity_LED;
 

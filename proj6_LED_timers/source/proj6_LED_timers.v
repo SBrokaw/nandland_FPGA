@@ -4,7 +4,7 @@
  * https://nandland.com/project-6-how-to-simulate-your-fpga-designs/
  *
  * Make the LEDs on the Go Board blink at different 
- * rates: 1 Hz, 2 Hz, 5 Hz, and 10 Hz.
+ * rates.
  */
 
  module proj6_LED_timers(
