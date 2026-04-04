@@ -11,43 +11,36 @@ module breathing_LED
     wire w_pwm_LED;
     reg [19:0] counter = 0;
     reg [7:0] breathing_index = 0;
+    wire [3:0] duty_cycle;
+    assign duty_cycle = breathing_index % 10;
 
     timer_ms #(.time_ms(5000)) start_breath0(.clk(clk), .timer_full(start_breath));
 
-    /*
     always @(posedge clk) begin
         // restart
         if( start_breath ) begin
-            counter <= 0;
-            breathing_index <= 0;
-        end
-        else begin
-            counter <= counter + 1;
-            if( counter >= ADVANCE_CNT ) begin
-                breathing_index <= breathing_index + 1;
-                counter <= 0;
-            end
+            breathing_index <= breathing_index + 1;
         end
     end
-    */
 
-    pwm_LED #(.duty(max_duty)) pwm_breathing_LED(.clk(clk), .LED(w_breathing_LED));
-    assign breathing_LED = w_breathing_LED;
+    pwm_LED pwm_breathing_LED(.clk(clk), .duty(duty_cycle), .LED(w_pwm_LED));
+    assign breathing_LED = w_pwm_LED;
 
 endmodule
 
-module pwm_LED #(parameter duty = 0) (input clk, output LED);
+module pwm_LED (input clk, input duty, output LED);
     parameter CLK_FREQ = 25_000_000;
     parameter PWM_FREQ = 1_000_000;
-    parameter LED_ON_CNT = duty;
-    parameter PWM_CNT = 100;
+    parameter PWM_CNT = 100 * CLK_FREQ / PWM_FREQ;
 
+    reg [9:0] LED_ON_CNT = 0;
     reg [4:0] pwm_clk_counter = 0;
     reg [6:0] pwm_counter = 0;
     reg r_LED;
 
     // toggle LED at PWM frequency with __duty__ duty cycle
     always @(posedge clk) begin
+        LED_ON_CNT = duty * CLK_FREQ / PWM_FREQ;
         if( pwm_counter >= PWM_CNT ) begin
             pwm_counter <= 0;
         end

@@ -18,12 +18,11 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>C:/fpga_projects/Nandland_FPGAs/proj7_UART_Rx/proj7_UART_Rx_Implmnt/sbt/outputs/bitmap/proj7_UART_Rx_bitmap.bin</File>
-			<FileTime>03/30/26 21:09:59</FileTime>
-			<JedecChecksum>0x4D45</JedecChecksum>
+			<FileTime>04/03/26 16:47:15</FileTime>
+			<JedecChecksum>0x5088</JedecChecksum>
 			<Operation>SPI Flash Erase,Program,Verify</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
-				<SVFProcessor>SVF Processor</SVFProcessor>
 				<AccessMode>SPI Flash Programming</AccessMode>
 			</Option>
 			<FPGALoader>
@@ -46,7 +45,6 @@
 					<Option>
 						<SVFVendor>JTAG STANDARD</SVFVendor>
 						<IOState>HighZ</IOState>
-						<SVFProcessor>SVF Processor</SVFProcessor>
 						<AccessMode>JTAG</AccessMode>
 					</Option>
 				</Device>
@@ -62,9 +60,9 @@
 					<Operation>SPI Flash Erase,Program,Verify</Operation>
 					<File>C:/fpga_projects/Nandland_FPGAs/proj7_UART_Rx/proj7_UART_Rx_Implmnt/sbt/outputs/bitmap/proj7_UART_Rx_bitmap.bin</File>
 					<AddressBase>0x00000000</AddressBase>
-					<EndAddress>0x00018000</EndAddress>
+					<EndAddress>0x00008000</EndAddress>
 					<DeviceSize>1</DeviceSize>
-					<DataSize>32300</DataSize>
+					<DataSize>32299</DataSize>
 					<NumberOfDevices>1</NumberOfDevices>
 					<ReInitialize value="FALSE"/>
 				</Device>
@@ -73,15 +71,14 @@
 				<Device>
 					<Pos>1</Pos>
 					<Name></Name>
-					<File>C:/fpga_projects/Nandland_FPGAs/Nandland_CH1_LED_button_blink/Nandland_CH1_LED_button_blink_Implmnt/sbt/outputs/bitmap/ch1_LED_button_blink_bitmap.bin</File>
+					<File>C:/fpga_projects/Nandland_FPGAs/proj7_UART_Rx/proj7_UART_Rx_Implmnt/sbt/outputs/bitmap/proj7_UART_Rx_bitmap.bin</File>
 					<LocalChainList>
 						<LocalDevice index="-99"
 							name="Unknown"
-							file="C:/fpga_projects/Nandland_FPGAs/Nandland_CH1_LED_button_blink/Nandland_CH1_LED_button_blink_Implmnt/sbt/outputs/bitmap/ch1_LED_button_blink_bitmap.bin"/>
+							file="C:/fpga_projects/Nandland_FPGAs/proj7_UART_Rx/proj7_UART_Rx_Implmnt/sbt/outputs/bitmap/proj7_UART_Rx_bitmap.bin"/>
 					</LocalChainList>
 					<Option>
 						<SVFVendor>JTAG STANDARD</SVFVendor>
-						<SVFProcessor>SVF Processor</SVFProcessor>
 					</Option>
 				</Device>
 			</FPGADevice>
