@@ -14,7 +14,7 @@ module breathing_LED
     wire [3:0] duty_cycle;
     assign duty_cycle = breathing_index % 10;
 
-    timer_ms #(.time_ms(5000)) start_breath0(.clk(clk), .timer_full(start_breath));
+    timer_ms #(.time_ms(time_ms)) start_breath0(.clk(clk), .timer_full(start_breath));
 
     always @(posedge clk) begin
         // restart
@@ -28,13 +28,12 @@ module breathing_LED
 
 endmodule
 
-module pwm_LED (input clk, input duty, output LED);
+module pwm_LED (input clk, input [3:0] duty, output LED);
     parameter CLK_FREQ = 25_000_000;
     parameter PWM_FREQ = 1_000_000;
     parameter PWM_CNT = 100 * CLK_FREQ / PWM_FREQ;
 
     reg [9:0] LED_ON_CNT = 0;
-    reg [4:0] pwm_clk_counter = 0;
     reg [6:0] pwm_counter = 0;
     reg r_LED;
 
