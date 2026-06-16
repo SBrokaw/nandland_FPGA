@@ -19,10 +19,21 @@ module proj7_UART_Rx
     /* breathing LED indicator */
     wire ding_activity;
     wire w_breathing_LED;
-    breathing_LED #(.time_ms(5000), .max_duty(20)) breathe0(.clk(clk), .breathing_LED(w_breathing_LED));
+    wire [7:0] duty_cycle_monitor;
+    wire [3:0] duty0;
+    wire [3:0] duty1;
+    breathing_LED #(.time_ms(5000), .max_duty(20)) breathe0(
+        .clk(clk), .breathing_LED(w_breathing_LED), .duty_cycle_monitor(duty_cycle_monitor));
     timer_ms #(.time_ms(200)) activity_timer(.clk(clk), .timer_full(ding_activity));
     reg r_activity_LED;
 
+    // seven seg monitors for LED duty cycle
+    assign duty0 = duty_cycle_monitor[3:0];
+    assign duty1 = duty_cycle_monitor[7:4];
+    seven_seg seg0(.num(duty0), .segments(seven_seg0));
+    seven_seg seg1(.num(duty1), .segments(seven_seg1));
+
+    /* dummy check blinking LED */
     always @(posedge clk) begin
         if(ding_activity) r_activity_LED <= ~r_activity_LED;
     end

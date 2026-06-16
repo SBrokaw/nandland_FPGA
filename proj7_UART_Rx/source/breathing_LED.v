@@ -5,30 +5,50 @@
 
 module breathing_LED
     #(parameter time_ms = 5000, parameter max_duty = 20)
-    (input clk, output breathing_LED);
+    (input clk, output breathing_LED, output [7:0] duty_cycle_monitor);
+    parameter CLK_FREQ = 25_000_000;
+    parameter INCREMENT_BREATH_INDEX = 100 * CLK_FREQ / 1000; // 200 ms for testing without LUT
+    // parameter INCREMENT_BREATH_INDEX = 1800 / 255 * CLK_FREQ / 1000; //increment 255 steps in 1800 ms
 
     wire start_breath;
     wire w_pwm_LED;
-    reg [19:0] counter = 0;
-    reg [7:0] breathing_index = 0;
-    wire [3:0] duty_cycle;
-    assign duty_cycle = breathing_index % 10;
+    reg [22:0] counter;
+    reg [7:0] breathing_index;
+    wire [7:0] logduty255;
+    wire [7:0] duty_cycle;
 
     timer_ms #(.time_ms(time_ms)) start_breath0(.clk(clk), .timer_full(start_breath));
 
     always @(posedge clk) begin
         // restart
         if( start_breath ) begin
+            breathing_index <= 0;
+            counter <= 0;
+        end
+        else if( counter >= INCREMENT_BREATH_INDEX ) begin
             breathing_index <= breathing_index + 1;
+            counter <= 0;
+        end
+        else begin
+            counter <= counter + 1;
         end
     end
 
+    // pwm_LED_LUT breathing_LUT(.idx(breathing_index), .scalar(logduty255));
+    assign logduty255 = breathing_index * 10; // for testing without LUT
+    // assign duty_cycle = logduty255 * 100 / 255;
+    assign duty_cycle = 100;
     pwm_LED pwm_breathing_LED(.clk(clk), .duty(duty_cycle), .LED(w_pwm_LED));
+
+    /* outputs */
     assign breathing_LED = w_pwm_LED;
+    wire [7:0] seven_seg_monitor;
+    assign seven_seg_monitor = duty_cycle;
+    assign duty_cycle_monitor = seven_seg_monitor;
 
 endmodule
 
-module pwm_LED (input clk, input [3:0] duty, output LED);
+module pwm_LED (input clk, input [6:0] duty, output LED);
     parameter CLK_FREQ = 25_000_000;
     parameter PWM_FREQ = 1_000_000;
     parameter PWM_CNT = 100 * CLK_FREQ / PWM_FREQ;
@@ -57,10 +77,16 @@ module pwm_LED (input clk, input [3:0] duty, output LED);
 
 endmodule
 
-/*
-module pwm_LED_LUT #(parameter idx = 0) (output scalar);
-    reg [7:0] LED_LUT = [0,3,5,8,11,14,16,19,22,25,28,31,34,37,41,44,47,50,54,57,61,64,67,71,74,78,82,85,89,93,96,100,104,107,111,115,119,122,126,130,134,138,141,145,149,153,156,160,164,167,171,174,178,181,185,188,192,195,198,201,204,207,210,213,216,219,222,224,227,229,231,234,236,238,240,241,243,245,246,248,249,250,251,252,253,253,254,254,255,255,255,255,255,254,254,253,253,252,251,250,249,248,246,245,243,241,240,238,236,234,231,229,227,224,222,219,216,213,210,207,204,201,198,195,192,188,185,181,178,174,171,167,164,160,156,153,149,145,141,138,134,130,126,122,119,115,111,107,104,100,96,93,89,85,82,78,74,71,67,64,61,57,54,50,47,44,41,37,34,31,28,25,22,19,16,14,11,8,5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    assign scalar = LED_LUT[idx];
-endmodule
-*/
+/* 
+ * Lookup Table (LUT) for the 0 to 255 scaled output value
+ * of an LED designed to mimic human breath: a sinusoid of log() 
+ * scaled values over 1800 milliseconds. 255 entries in the LUT.
+ */
+// module pwm_LED_LUT (input [7:0] idx, output [7:0] scalar);
+//     reg [7:0] LED_LUT [0:254];
+//     initial begin
+//         $readmemh("breathing_LED_LUT.mem", LED_LUT);
+//     end
+//     assign scalar = LED_LUT[idx];
+// endmodule
 
